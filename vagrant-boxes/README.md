@@ -15,16 +15,21 @@ _vagrant init php7-environment_
 
 
 ### Vagrantfile Sample
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
 
 Vagrant.configure("2") do |config|
   
   config.vm.box = "php7-environment"
 
-  # Create a public network, which generally matched to bridged network.
-  # Bridged networks make the machine appear as another physical device on
-  # your network.
-  config.vm.network "public_network"
-  # config.vm.network "public_network", ip: "192.168.0.10"
+  config.vm.network "public_network", ip: "192.168.0.10"
+  #config.vm.network "public_network"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -45,3 +50,4 @@ Vagrant.configure("2") do |config|
   end
   
 end
+```
